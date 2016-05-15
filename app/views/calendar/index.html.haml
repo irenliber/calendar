@@ -1,3 +1,4 @@
 %h1 Календарь
 = month_calendar do |date|
-  = date
+  = link_to date.strftime('%-d'), events_path
+
