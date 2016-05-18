@@ -1,0 +1,25 @@
+= form_for @event, html: { class: 'form-horizontal'} do |f|
+  .form-group
+    = f.label "Title", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label "Location", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :location, class: 'form-control'
+  .form-group
+    = f.label "Start", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :date_start, class: 'form-control'
+  .form-group
+    = f.label "End", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :date_end, class: 'form-control'
+  .form-group
+    .col-sm-10
+      = f.text_field :start_time, class: 'form-control'
+  .form-group
+    .col-sm-10
+      = f.text_field :end_time, class: 'form-control'
+
+  = f.submit "Submit", class: "btn btn-default"
