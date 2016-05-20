@@ -1,6 +1,25 @@
-- @events.each do |event|
-  = event.title
-  = event.location
-  = event.date_start
-  = event.date_end
-  = event.done
+%div.title
+  - if params[:date].blank?
+    %h1 Cписок событий -> Все даты
+  - else
+    %h2 Список событий -> #{@date.to_date.strftime("%B %d, %Y")}
+
+%br
+  %table.table
+    %thead
+      %tr
+        %th Title
+        %th Location
+        %th Time Start
+        %th Time End
+        %th Already done
+        %th Actions
+
+    %tbody
+    - @events.each do |event|
+      %tr
+        %td = event.title
+        %td = event.location
+        %td = event.date_start
+        %td = event.date_end
+        %td = event.done
