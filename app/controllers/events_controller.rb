@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :find_event, only: [:show, :edit, :update, :destroy]
+
   def index
     if params[:date].blank?
       @events = Event.order ("date_start DESC")
@@ -46,6 +48,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :location, :date_start, :date_end, :start_time, :end_time, :done)
+  end
+
+  def find_event
+    @event = Event.find(params[:id])
   end
 
 end
