@@ -1,4 +1,4 @@
-= form_for @event, html: { class: 'form-horizontal'} do |f|
+= form_for(@event, html: { class: 'form-horizontal'}) do |f|
   .form-group
     = f.label "Title", class: 'col-sm-2 control-label'
     .col-sm-10
@@ -7,19 +7,19 @@
     = f.label "Location", class: 'col-sm-2 control-label'
     .col-sm-10
       = f.text_field :location, class: 'form-control'
+
   .form-group
-    = f.label "Start", class: 'col-sm-2 control-label'
+    = f.label "Start", class: "control-label col-sm-2"
     .col-sm-10
-      = f.text_field :date_start, class: 'form-control'
+      = f.text_field :date_start, class: "form-control", "data-provide" => 'datepicker'
+      = f.text_field :start_time, class: "form-control timepicker"
+
   .form-group
-    = f.label "End", class: 'col-sm-2 control-label'
+    = f.label "End", class: "control-label col-sm-2"
     .col-sm-10
-      = f.text_field :date_end, class: 'form-control'
-  .form-group
-    .col-sm-10
-      = f.text_field :start_time, class: 'form-control'
-  .form-group
-    .col-sm-10
-      = f.text_field :end_time, class: 'form-control'
+      = f.text_field :date_end, class: "form-control", "data-provide" => 'datepicker'
+      = f.text_field :end_time, class: "form-control timepicker"
 
   = f.submit "Submit", class: "btn btn-default"
+  .btn.btn-default
+    = link_to "Back", events_path
