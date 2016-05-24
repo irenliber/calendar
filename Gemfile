@@ -53,3 +53,6 @@ gem 'haml-rails', '~> 0.9.0'
 gem "simple_calendar", "~> 2.0"
 
 gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'bootstrap-datepicker-rails', '~> 1.4.0'
+gem 'jquery-timepicker-rails'
