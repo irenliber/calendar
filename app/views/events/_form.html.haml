@@ -11,13 +11,13 @@
   .form-group
     = f.label "Start", class: "control-label col-sm-2"
     .col-sm-10
-      = f.text_field :date_start, class: "form-control", "data-provide" => 'datepicker'
+      = f.text_field :date_start, class: "form-control datepicker"
       = f.text_field :start_time, class: "form-control timepicker"
 
   .form-group
     = f.label "End", class: "control-label col-sm-2"
     .col-sm-10
-      = f.text_field :date_end, class: "form-control", "data-provide" => 'datepicker'
+      = f.text_field :date_end, class: "form-control datepicker"
       = f.text_field :end_time, class: "form-control timepicker"
 
   = f.submit "Submit", class: "btn btn-default"
