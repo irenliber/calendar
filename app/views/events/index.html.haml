@@ -24,9 +24,9 @@
         %td= event.date_end
         %td
         %td
-          = link_to "Edit", edit_event_path(event.id, date: params[:date_start]), class: 'btn btn-default btn-sm'
-          = link_to "Remove", event_path(event.id, date: params[:date_start]), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default btn-sm'
+          = link_to "Edit", edit_event_path(event.id, date: params[:date]), class: 'btn btn-default btn-sm'
+          = link_to "Remove", event_path(event.id, date: params[:date]), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default btn-sm'
 
-= link_to "Back", root_path, class: "btn btn-sm btn-default"
+= link_to "Back", root_path(:date => params[:date]), class: "btn btn-sm btn-default"
 
-= link_to "Create new event", new_event_path(date: params[:date_start]), class: "btn btn-sm btn-default"
+= link_to "Create new event", new_event_path(date: params[:date]), class: "btn btn-sm btn-default"

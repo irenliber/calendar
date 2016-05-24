@@ -21,5 +21,4 @@
       = f.text_field :end_time, class: "form-control timepicker"
 
   = f.submit "Submit", class: "btn btn-default"
-  .btn.btn-default
-    = link_to "Back", events_path
+  = link_to "Back", events_path(:date => params[:date]), class: "btn btn-default"
